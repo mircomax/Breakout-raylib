@@ -1,0 +1,8 @@
+﻿  Ball.cpp
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(23,26): warning C4244: 'argomento': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(23,19): warning C4244: 'argomento': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(24,31): warning C4244: 'argomento': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(24,24): warning C4244: 'argomento': conversione da 'float' a 'int'. Possibile perdita di dati.
+  Main.cpp
+  Generazione del codice in corso...
+  Breakout-raylib.vcxproj -> C:\Users\mirco\Desktop\C++\Breakout-raylib\x64\Debug\Breakout-raylib.exe
