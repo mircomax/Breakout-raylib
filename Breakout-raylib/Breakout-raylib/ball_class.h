@@ -1,5 +1,5 @@
-#ifndef BALL_H
-#define BALL_H
+#ifndef BALL_CLASS_H
+#define BALL_CLASS_H
 
 #include "raylib.h"
 
