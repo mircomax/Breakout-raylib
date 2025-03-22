@@ -1,2 +1,4 @@
-﻿  Main.cpp
+﻿  Block.cpp
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Block.cpp(17,20): warning C4244: '=': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Block.cpp(18,20): warning C4244: '=': conversione da 'int' a 'float'. Possibile perdita di dati.
   Breakout-raylib.vcxproj -> C:\Users\mirco\Desktop\C++\Breakout-raylib\x64\Debug\Breakout-raylib.exe

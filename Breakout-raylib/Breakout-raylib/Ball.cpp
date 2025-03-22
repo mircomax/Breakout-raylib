@@ -1,13 +1,16 @@
 #include "raylib.h"
 #include "ball_class.h"
+#include <format>
 
+const float speedX_iniziale = -4.5; // Velocità iniziale
+const float speedY_iniziale = -4.5;
 // Costruttore
 Ball::Ball() {
-    speedX = -6.5;
-    speedY = -6.5;
+    speedX = speedX_iniziale;
+    speedY = speedY_iniziale;
     radius = 12.0;
     pos.x = 800 / 2;
-    pos.y = 300;
+    pos.y = 200;
 }
 
 // Aggiorna la posizione della palla e controlla collisioni
@@ -16,6 +19,7 @@ void Ball::Update(Rectangle& Paddle) {
     pos.y += speedY;
     checkCollisionsWall(); 
     checkCollisionsPaddle(Paddle);
+    checkBallOutOfBounds();
 }
 
 // Disegnare palla
@@ -40,3 +44,27 @@ void Ball::checkCollisionsPaddle(Rectangle paddle) {
         speedY *= -1;
     }
 }
+
+void Ball::checkBallOutOfBounds() {
+    if (pos.y >= GetScreenHeight() - 10) {  // Controlla se la palla colpisce il muro
+        pos.x = GetScreenWidth() / 2;
+        pos.y = 200;
+        speedX = speedX_iniziale; // Reset della velocità iniziale
+        speedY = speedY_iniziale;
+    }
+}
+
+Vector2 Ball::GetPosition() {
+    return pos;
+}
+
+void Ball::InvertiVelocitaY()
+{
+    speedY *= -1;
+}
+
+void Ball::InvertiVelocitaX()
+{
+    speedX *= -1;
+}
+

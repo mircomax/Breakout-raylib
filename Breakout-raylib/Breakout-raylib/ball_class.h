@@ -4,11 +4,11 @@
 #include "raylib.h"
 
 class Ball {
-private:
+public:
     float radius;     // Raggio
     float speedX, speedY; // Velocità
     Vector2 pos; // Posizione
-public:  
+  
     // Costruttore
     Ball();
 
@@ -17,6 +17,10 @@ public:
     void Update(Rectangle& Paddle);
     void checkCollisionsWall();
     void checkCollisionsPaddle(Rectangle paddle);
+    void checkBallOutOfBounds(); // Controllare se la palla colpisce il muro basso
+    Vector2 GetPosition();
+    void InvertiVelocitaY();
+    void InvertiVelocitaX();
 };
 
 #endif

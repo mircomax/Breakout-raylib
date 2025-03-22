@@ -3,13 +3,14 @@
 #include "Game_functions.h"
 #include "ball_class.h"
 #include "block_class.h"
+
 // Program main entry point
 
 int main(void)
 {
     const int screenWidth = 800;
     const int screenHeight = 800;
-    const int numeroBlocchi = 100; // Numero tot dei blocchi nel livello
+    const int numeroBlocchi = 96; // Numero tot dei blocchi nel livello
 
     SetConfigFlags(FLAG_VSYNC_HINT);
     SetTargetFPS(60); // Set our game to run at 60 frames-per-second
@@ -19,25 +20,29 @@ int main(void)
     Ball palla1;
     // Creazione dei blocchi
     Block* blocchi = new Block[numeroBlocchi]; // Alloca dinamicamente i blocchi
-    for (int i = 0; i < numeroBlocchi; i++) {
-        blocchi[i].CreaPosizione(i);
-    }
 
     int paddleWidth = 100, paddleY = screenHeight - 100, paddleHeight = 30;
-    float paddleX = (screenWidth / 2) - 50, paddleSpeed = 5;
+    float paddleX = (screenWidth / 2) - 50, paddleSpeed = 7;
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         Rectangle Paddle = { (float)paddleX, (float)paddleY,  (float)paddleWidth,  (float)paddleHeight};
-        checkMovimentopaddle(paddleSpeed, paddleX);
+        checkMovimentopaddle(paddleSpeed, paddleX); // Muovere il paddle
+
         //Aggiorna posizione della palla
         palla1.Update(Paddle);
+
+        for (int i = 0; i < numeroBlocchi; i++) {
+            blocchi[i].CheckCollisionsBall(palla1); // Controllare se la palla colpisce i blocchi
+            blocchi[i].CreaPosizione(i); // Creare il blocco se non è stato colpito dalla palla
+        }
 
     BeginDrawing();
     ClearBackground(BLACK);
         // Disegnare i blocchi
         for (int i = 0; i < numeroBlocchi; i++) {
             DrawRectangleRec(blocchi[i].blocco, RED);
+            DrawRectangleLinesEx(blocchi[i].blocco, 1, BLACK);
         }
             disegnaScritte();
         // Disegna Paddle giocatore 1 
@@ -50,9 +55,9 @@ int main(void)
     }
     delete[] blocchi; // Rilascia la memoria a fine programma
     // De-Initialization
-    //--------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------
     CloseWindow();        // Close window and OpenGL context
-    //--------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------
 
     return 0;
 }
