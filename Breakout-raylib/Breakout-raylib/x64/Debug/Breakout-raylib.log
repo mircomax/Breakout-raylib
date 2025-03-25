@@ -1,4 +1,8 @@
-﻿  Block.cpp
-C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Block.cpp(17,20): warning C4244: '=': conversione da 'int' a 'float'. Possibile perdita di dati.
-C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Block.cpp(18,20): warning C4244: '=': conversione da 'int' a 'float'. Possibile perdita di dati.
+﻿  Ball.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(29,26): warning C4244: 'argomento': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(29,19): warning C4244: 'argomento': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(30,31): warning C4244: 'argomento': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(30,24): warning C4244: 'argomento': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\mirco\Desktop\C++\Breakout-raylib\Breakout-raylib\Ball.cpp(52,34): warning C4244: '=': conversione da 'int' a 'float'. Possibile perdita di dati.
   Breakout-raylib.vcxproj -> C:\Users\mirco\Desktop\C++\Breakout-raylib\x64\Debug\Breakout-raylib.exe

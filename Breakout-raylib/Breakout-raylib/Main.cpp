@@ -6,8 +6,10 @@
 
 // Program main entry point
 
+
 int main(void)
 {
+    srand(time(NULL));
     const int screenWidth = 800;
     const int screenHeight = 800;
     const int numeroBlocchi = 96; // Numero tot dei blocchi nel livello
@@ -23,6 +25,11 @@ int main(void)
 
     int paddleWidth = 100, paddleY = screenHeight - 100, paddleHeight = 30;
     float paddleX = (screenWidth / 2) - 50, paddleSpeed = 7;
+
+    for (int i = 0; i < numeroBlocchi; i++) {
+        blocchi[i].CreaPosizione(i); // Creare tutti i blocchi iniziali
+    }
+
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -34,14 +41,21 @@ int main(void)
 
         for (int i = 0; i < numeroBlocchi; i++) {
             blocchi[i].CheckCollisionsBall(palla1); // Controllare se la palla colpisce i blocchi
-            blocchi[i].CreaPosizione(i); // Creare il blocco se non è stato colpito dalla palla
+            if (blocchi[i].collisioneGestita) break; // Alla prima collisione interrompe il ciclo in modo da non prenderne una doppia
         }
 
+        // Resetta la variabile della collisione e disattiva i blocchi colpiti
+        for (int i = 0; i < numeroBlocchi; i++) {
+            blocchi[i].collisioneGestita = false; 
+            blocchi[i].UpdateBlocks();
+        }
+       
     BeginDrawing();
+
     ClearBackground(BLACK);
         // Disegnare i blocchi
         for (int i = 0; i < numeroBlocchi; i++) {
-            DrawRectangleRec(blocchi[i].blocco, RED);
+            DrawRectangleRec(blocchi[i].blocco, blocchi[i].coloreBlocco);
             DrawRectangleLinesEx(blocchi[i].blocco, 1, BLACK);
         }
             disegnaScritte();

@@ -1,6 +1,6 @@
 #ifndef BALL_CLASS_H
 #define BALL_CLASS_H
-
+#include <random>
 #include "raylib.h"
 
 class Ball {
@@ -8,7 +8,7 @@ public:
     float radius;     // Raggio
     float speedX, speedY; // Velocità
     Vector2 pos; // Posizione
-  
+    
     // Costruttore
     Ball();
 

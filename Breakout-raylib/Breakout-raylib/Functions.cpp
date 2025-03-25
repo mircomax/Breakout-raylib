@@ -5,7 +5,7 @@
 //Muovere il paddle
 void checkMovimentopaddle(float &paddleSpeed, float &paddleX) {
 	//Muovere verso destra finchè è nello schermo
-	if(IsKeyDown(KEY_RIGHT) && paddleX < GetScreenWidth()) { 
+	if(IsKeyDown(KEY_RIGHT) && paddleX < GetScreenWidth() - 100) { 
 		paddleX += paddleSpeed;
 	}
 	//Muovere verso sinistra finchè è nello schermo
